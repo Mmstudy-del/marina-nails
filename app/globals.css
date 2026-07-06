@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-marina-pale text-marina-dark;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-marina-pale;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-marina-light rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-marina-pink;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply px-6 py-2 bg-marina-pink text-white rounded-lg font-semibold hover:bg-marina-light transition-colors duration-300;
+}
+
+.btn-secondary {
+  @apply px-6 py-2 bg-marina-dark text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-300;
+}
+
+.btn-light {
+  @apply px-6 py-2 bg-marina-pale text-marina-pink border-2 border-marina-pink rounded-lg font-semibold hover:bg-marina-light transition-colors duration-300;
+}
+
+/* Card styles */
+.card {
+  @apply bg-white rounded-xl shadow-lg p-6 transition-transform duration-300 hover:shadow-xl;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* Input styles */
+input,
+textarea,
+select {
+  @apply bg-white border-2 border-marina-light rounded-lg px-4 py-2 text-marina-dark focus:outline-none focus:border-marina-pink transition-colors duration-300;
+}
+
+input::placeholder,
+textarea::placeholder {
+  @apply text-gray-400;
+}
